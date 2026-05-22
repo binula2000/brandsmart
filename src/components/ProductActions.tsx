@@ -11,7 +11,7 @@ interface ProductActionsProps {
 }
 
 export default function ProductActions({ id, title, price, image }: ProductActionsProps) {
-  const { addToCart, toggleWishlist, wishlist, showToast, setIsSignInDrawerOpen, setIsKlarnaModalOpen, zipCode, setIsZipModalOpen } = useCart();
+  const { addToCart, toggleWishlist, wishlist, setIsSignInDrawerOpen, setIsKlarnaModalOpen, zipCode, setIsZipModalOpen } = useCart();
   const isWishlisted = wishlist.includes(id);
 
   return (
@@ -34,7 +34,7 @@ export default function ProductActions({ id, title, price, image }: ProductActio
 
       {/* Fulfillment Box */}
       <div className="flex border border-gray-300 rounded overflow-hidden mb-6 h-16 cursor-pointer">
-        <div className="w-1/2 bg-gray-50 flex items-center justify-center border-r border-gray-300 hover:bg-gray-100 transition-colors" onClick={() => showToast('Updating Fulfillment Location...')}>
+        <div className="w-1/2 bg-gray-50 flex items-center justify-center border-r border-gray-300 hover:bg-gray-100 transition-colors" onClick={() => alert('Updating Fulfillment Location...')}>
           <div className="text-center">
             <div className="font-bold text-gray-900 text-sm">FREE - Ready in 1 hour</div>
             <div className="text-xs text-gray-500">Pickup at Store</div>
@@ -57,7 +57,7 @@ export default function ProductActions({ id, title, price, image }: ProductActio
           <ShoppingCart size={20} /> Add to Cart
         </button>
         <button 
-          onClick={() => showToast('Connecting to a live agent...')}
+          onClick={() => alert('Connecting to a live agent...')}
           className="bg-[#2ecc71] hover:bg-[#27ae60] text-white px-6 rounded font-bold text-xs flex flex-col items-center justify-center transition-colors"
         >
           <Phone size={16} className="mb-0.5" />

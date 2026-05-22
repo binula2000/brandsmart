@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ChevronRight, Star, Share2 } from "lucide-react";
+import { ChevronRight, Star, Share2, FileText } from "lucide-react";
 import TVS_DATA from "@/data/tvs.json";
 import ProductGallery from "@/components/ProductGallery";
 import ProductActions from "@/components/ProductActions";
@@ -117,20 +117,20 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
             <summary className="flex justify-between items-center font-bold cursor-pointer list-none p-5 hover:bg-gray-50 transition-colors">
               <span className="text-lg text-gray-900 uppercase tracking-wide">Product Description</span>
               <span className="transition group-open:rotate-180">
-                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
               </span>
             </summary>
             <div className="text-gray-700 text-sm p-5 pt-0 border-t border-gray-100 bg-white">
               <p className="mb-6 leading-relaxed text-[15px]">{product.description}</p>
               <div className="flex gap-6 mt-4">
-                <div className="flex items-center gap-2 text-brand-blue font-bold cursor-pointer hover:underline">
-                  <span className="bg-blue-50 p-2 rounded"><img src="/icons-1.png" alt="PDF" className="w-4 h-4 opacity-50" /></span>
+                <a href={product.manualUrl || "#"} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-brand-blue font-bold cursor-pointer hover:underline">
+                  <span className="bg-blue-50 p-2 rounded text-blue-400"><FileText size={16} /></span>
                   Specification - PDF
-                </div>
-                <div className="flex items-center gap-2 text-brand-blue font-bold cursor-pointer hover:underline">
-                  <span className="bg-blue-50 p-2 rounded"><img src="/icons-2.png" alt="PDF" className="w-4 h-4 opacity-50" /></span>
+                </a>
+                <a href={product.manualUrl || "#"} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-brand-blue font-bold cursor-pointer hover:underline">
+                  <span className="bg-blue-50 p-2 rounded text-blue-400"><FileText size={16} /></span>
                   Use and Care Manual
-                </div>
+                </a>
               </div>
             </div>
           </details>
@@ -140,7 +140,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
             <summary className="flex justify-between items-center font-bold cursor-pointer list-none p-5 hover:bg-gray-50 transition-colors">
               <span className="text-lg text-gray-900 uppercase tracking-wide">Specifications</span>
               <span className="transition group-open:rotate-180">
-                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
               </span>
             </summary>
             <div className="p-0 border-t border-gray-100 bg-white">

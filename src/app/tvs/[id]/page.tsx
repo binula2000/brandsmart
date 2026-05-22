@@ -66,7 +66,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                <div className="flex items-center gap-1">
                  <div className="flex text-yellow-400">
                    {[...Array(5)].map((_, i) => (
-                     <Star key={i} size={16} fill={i < Math.floor(product.rating) ? "currentColor" : "none"} />
+                     <Star key={i} size={16} fill={i < Math.floor(Number(product.rating)) ? "currentColor" : "none"} />
                    ))}
                  </div>
                  <span className="text-brand-blue text-sm font-semibold hover:underline cursor-pointer ml-1">({product.reviews})</span>
@@ -175,7 +175,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                <div className="text-5xl font-extrabold text-gray-900 mb-2">{product.rating}</div>
                <div className="flex text-yellow-400 mb-2">
                  {[...Array(5)].map((_, i) => (
-                   <Star key={i} size={24} fill={i < Math.floor(product.rating) ? "currentColor" : "none"} />
+                   <Star key={i} size={24} fill={i < Math.floor(Number(product.rating)) ? "currentColor" : "none"} />
                  ))}
                </div>
                <div className="text-gray-500 font-semibold mb-6">Based on {product.reviews} reviews</div>

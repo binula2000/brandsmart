@@ -14,7 +14,7 @@ interface Product {
   image?: string;
   price: number;
   originalPrice?: number;
-  rating?: number;
+  rating?: number | string;
   reviews?: number;
 }
 
@@ -57,7 +57,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           <div className="flex items-center gap-1 mb-3">
             <div className="flex text-yellow-400">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} size={14} fill={i < Math.floor(product.rating!) ? "currentColor" : "none"} />
+                <Star key={i} size={14} fill={i < Math.floor(Number(product.rating!)) ? "currentColor" : "none"} />
               ))}
             </div>
             <span className="text-xs text-brand-blue hover:underline cursor-pointer">({product.reviews})</span>

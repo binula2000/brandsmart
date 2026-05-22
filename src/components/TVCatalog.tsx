@@ -14,7 +14,7 @@ interface TV {
   image?: string;
   price: number;
   originalPrice?: number;
-  rating?: number;
+  rating?: number | string;
   reviews?: number;
   specifications?: Record<string, string>;
 }

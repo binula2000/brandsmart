@@ -50,7 +50,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
         <div className="flex flex-col lg:flex-row gap-8 mb-12">
           
           {/* Left Column: Image Gallery (BrandsMart style) */}
-          <ProductGallery id={product.id} images={product.images || [product.image]} title={product.title} isSale={isSale} />
+          <ProductGallery id={product.id} images={product.images || []} title={product.title} isSale={isSale} />
 
           {/* Right Column: Product Details & Actions */}
           <div className="w-full lg:w-5/12 flex flex-col">
@@ -93,7 +93,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
 
 
 
-            <ProductActions id={product.id} title={product.title} price={product.price} image={product.images?.[0] || product.image} />
+            <ProductActions id={product.id} title={product.title} price={product.price} image={product.images?.[0] || ''} />
           </div>
         </div>
 

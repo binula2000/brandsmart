@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import TVS_DATA from "@/data/tvs.json";
 import TVCatalog from "@/components/TVCatalog";
+import { Suspense } from "react";
 
 export default function TVCategoryPage() {
   return (
@@ -16,7 +17,9 @@ export default function TVCategoryPage() {
       </nav>
 
       {/* Render the interactive catalog client component */}
-      <TVCatalog initialTvs={TVS_DATA} />
+      <Suspense fallback={<div className="text-center py-12">Loading TVs...</div>}>
+        <TVCatalog initialTvs={TVS_DATA} />
+      </Suspense>
     </div>
   );
 }

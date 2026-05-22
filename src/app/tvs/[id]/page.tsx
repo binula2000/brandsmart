@@ -9,6 +9,12 @@ const getProduct = async (id: string) => {
   return tv;
 };
 
+export async function generateStaticParams() {
+  return TVS_DATA.map((tv) => ({
+    id: tv.id,
+  }));
+}
+
 export default async function ProductDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = await params;
   const product = await getProduct(resolvedParams.id);

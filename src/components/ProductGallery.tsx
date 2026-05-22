@@ -43,11 +43,7 @@ export default function ProductGallery({ id, images, title, isSale }: ProductGal
           </div>
         )}
 
-        {isSale && (
-          <div className="absolute top-4 left-4 bg-brand-blue text-white text-xs font-bold px-2 py-1 rounded z-10 uppercase tracking-wide shadow">
-            Member Deal
-          </div>
-        )}
+
         <div className="w-full h-full relative overflow-hidden flex items-center justify-center">
             <img src={activeImage} alt={title} className="max-w-full max-h-[500px] object-contain transition-transform duration-300 group-hover:scale-[1.8] group-hover:origin-center mix-blend-multiply" />
         </div>

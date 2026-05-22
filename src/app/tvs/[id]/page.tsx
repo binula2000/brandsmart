@@ -19,7 +19,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
   const resolvedParams = await params;
   const product = await getProduct(resolvedParams.id);
   
-  const isSale = product.originalPrice && product.price < product.originalPrice;
+  const isSale = !!product.originalPrice && product.price < product.originalPrice;
   const savings = isSale ? product.originalPrice! - product.price : 0;
   
   // Default specifications if none exist
